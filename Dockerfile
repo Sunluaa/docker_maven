@@ -1,13 +1,9 @@
-# Используем официальный образ Maven с OpenJDK
-FROM maven:3.8.8-openjdk-17
+FROM maven:3.9.4-eclipse-temurin-17
 
-# Создаем рабочую директорию в контейнере
 WORKDIR /app
 
-# Копируем проект в контейнер (если проект отсутствует, контейнер просто запустит Maven)
 COPY . /app
 
-# Команда по умолчанию для проверки версии Maven
-CMD ["mvn", "--version"]
-
 EXPOSE 8080
+
+CMD ["mvn", "--version"]
